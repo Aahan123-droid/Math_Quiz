@@ -14,18 +14,24 @@ document.getElementById("player_question").innerHTML = "Question Turn - " + play
 document.getElementById("player_answer").innerHTML = "Answer Turn - " + player2_name;
 
 function send(){
-    
- question_word = "<h4 id = 'word_display'> Q." + remove_charAt3 + "</h4>";
- input_box = "<br> Answer: <input type = 'text' id = 'input_check_box'>";
- check_button = "<br><br><button class='btn btn-info' onclick='check()'>Check</button>";
- row = question_word + input_box + check_button;
+    number1 = document.getElementById("number1").value;
+    number2 = document.getElementById("number2").value;
+    actual_answer = parseInt(number1) * parseInt(number2);
 
-document.getElementById("output").innerHTML = row;
- document.getElementById("word").value = "";
+    question_number = "<h4>" + number1 + "X" + number2 +"</h4>";
+    input_box = "<br>Answer : <input type='text' id='input_check_box'>";
+    check_button = "<br><br><button class='btn btn-info' onclick='check()'>Check</button>";
+    row = question_number + input_box + check_button;
+
+    document.getElementById("output").innerHTML = row;
+    document.getElementById("number1").value = "";
+    document.getElementById("number2").value = "";
 }
 
 question_turn = "player1";
 answer_turn = "player2";
+
+
 
 function check(){
     get_answer = document.getElementById("input_check_box").value;
