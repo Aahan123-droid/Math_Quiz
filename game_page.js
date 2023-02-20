@@ -35,11 +35,9 @@ answer_turn = "player2";
 
 function check(){
     get_answer = document.getElementById("input_check_box").value;
-    answer = get_answer.toLowerCase();
-    console.log("answer in lowercase - " + answer);
-    if(answer == word){
+    if(get_answer == actual_answer){
         if(answer_turn == "player1"){
-            player1_score = player1_score + 1;
+            update_player1_score = player1_score + 1;
             document.getElementById("player1_score").innerHTML = player1_score;
         }
         else{
